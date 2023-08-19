@@ -11,9 +11,9 @@ class CustomUserAdmin(UserAdmin):
     add_form = CustomUserCreationForm
     form = CustomUserChangeForm
     model = CustomUser
-    list_display = ('username', 'is_staff', 'first_name', 'last_name', 'active_player', 'date_joined', 'level', 'phone_number')
-    list_filter = ('active_player',)
-    search_fields = ('username', 'first_name', 'last_name')
+    list_display = ('username', 'is_staff', 'first_name', 'last_name', 'active_player', 'date_joined', 'level', 'league_type', 'time_playing', 'phone_number')
+    list_filter = ('active_player','league_type','date_joined')
+    search_fields = ('username', 'first_name', 'last_name', 'league_type')
     ordering = ('-active_player', 'date_joined')
     readonly_fields = ('date_joined',)
 
@@ -23,7 +23,7 @@ class CustomUserAdmin(UserAdmin):
         ('Personal info', {'fields': ('first_name', 'last_name', 'email', 'phone_number')}),
         ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions')}),
         ('Important dates', {'fields': ('last_login', 'date_joined')}),
-        ('Custom Fields', {'fields': ('level', 'active_player')}),
+        ('Custom Fields', {'fields': ('level', 'active_player', 'league_type')}),
     )
 
     # customize fieldsets in create user form

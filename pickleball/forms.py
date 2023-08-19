@@ -8,12 +8,12 @@ from .models import CustomUser
 class CustomUserCreationForm(UserCreationForm):
     class Meta:
         model = CustomUser
-        fields = ('username', 'active_player', 'is_staff', 'first_name', 'last_name', 'email', 'phone_number', 'level', 'password1', 'password2')
+        fields = ('username', 'active_player', 'is_staff', 'first_name', 'last_name', 'email', 'phone_number', 'level', 'league_type', 'password1', 'password2')
 
 class CustomUserChangeForm(UserChangeForm):
     class Meta:
         model = CustomUser
-        fields = ('level', 'active_player', 'is_staff', 'username', 'first_name', 'last_name', 'email', 'phone_number')
+        fields = ('level', 'active_player', 'is_staff', 'username', 'first_name', 'last_name', 'email', 'phone_number', 'level', 'league_type')
 
 
 
